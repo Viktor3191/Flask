@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -19,9 +19,9 @@ def user(name, id):
     return 'hello' + name + '-' + str(id)
 
 
-@app.route('/mine/<name>')
-def mine(name):
-    return 'hello %s' % name
+@app.route('/mine')
+def mine():
+    return render_template('mine.html')
 
 
 if __name__ == '__main__':
