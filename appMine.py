@@ -36,7 +36,7 @@ def create_mine():
         try:
             db.session.add(articleMine)
             db.session.commit()
-            return redirect('/')
+            return redirect('/posts-mine')
         except:
             return 'При добавлении статью произошла ошибка'
     else:
